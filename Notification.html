@@ -9,9 +9,45 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <!-- SweetAlert2 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         .container {
             margin-top: 50px;
+        }
+
+        .custom-toast-popup {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            font-family: 'Avenir', sans-serif;
+        }
+
+        .custom-toast-title {
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .custom-toast-icon {
+            font-size: 20px;
+            color: #28a745;
+            margin-bottom: 10px;
+        }
+
+        .custom-toast-confirm {
+            background-color: #28a745 !important;
+            border-radius: 20px;
+            padding: 10px 20px;
+        }
+
+        .custom-toast-cancel {
+            background-color: #d33 !important;
+            border-radius: 20px;
+            padding: 10px 20px;
+        }
+
+        .swal2-timer-progress-bar {
+            background-color: #28a745;
         }
     </style>
 </head>
@@ -41,12 +77,21 @@
                 toast: true,
                 icon: 'success',
                 title: 'Operation Successful',
+                text: 'Notification Created Successfully!',
                 animation: true,
                 position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000,
+                background: '#e6f7e6',
+                color: '#155724',
+                timer: 5000,
                 timerProgressBar: true,
-                showCloseButton: true
+                showConfirmButton: false,
+                width: '400px',
+                padding: '20px',
+                customClass: {
+                    popup: 'custom-toast-popup',
+                    title: 'custom-toast-title',
+                    icon: 'custom-toast-icon',
+                },
             });
         });
 
